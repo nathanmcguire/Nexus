@@ -1,5 +1,12 @@
 # ⚔️ Nexus
 
+## Clone This Repo
+
+```bash
+git clone https://github.com/nathanmcguire/nexus.git
+```
+
+
 ## 🛠 Dependencies
 
 - `python3`  
@@ -10,58 +17,39 @@
   - macOS: `brew install node`
   - Windows: [Download from nodejs.org](https://nodejs.org/)
 
-- `yarn`  
-  - macOS: `brew install yarn`
-  - Windows: `npm install --global yarn`
-
 - `just`  
   - macOS: `brew install just`
   - Windows: `choco install just` or [Download from GitHub](https://github.com/casey/just/releases)
 
-## Clone This Repo
+## 🚀 justfile
 
-```bash
-git clone https://github.com/nathanmcguire/nexus.git
-```
-
-## 🚀 Run justfile
+### Initialize the Project
 ```bash
 just init
 ```
-- Create a virtual environment in `.venv`
-- Upgrade `pip`
-- Install dependencies from `requirements.txt`:
+- Creates a virtual environment in `.venv`.
+- Upgrades `pip`.
+- Installs dependencies from `requirements.txt`.
+- Installs `yarn` globally if not already installed.
+- Installs JavaScript dependencies using `yarn`.
 
+### Run FastAPI Development Server
 ```bash
-pip install -r requirements.txt
+just run-fastapi
 ```
+- Starts the FastAPI server using `uvicorn` with hot-reloading enabled.
+- The server will be available at `http://localhost:8002`.
 
-## Backend FastAPI
-
-### Activate the Virtual Environment
-- **macOS/Linux**:
-  ```bash
-  source .venv/bin/activate
-  ```
-- **Windows**:
-  ```bash
-  .venv\Scripts\activate
-  ```
-
-### Run the Development Server
+### Run React Development Server
 ```bash
-uvicorn nexus-fastapi.main:app --reload
+just run-react
 ```
-port 8000
+- Starts the React development server for the `nexus-react` workspace.
+- The server will be available at `http://localhost:8001`.
 
-## Nexus React (Frontend)
+### Run Documentation Development Server
 ```bash
-yarn workspace nexus-react start
+just run-docs
 ```
-port 3000
-
-## Docs
-```bash
-yarn workspace docs start
-```
-port 4000
+- Starts the documentation server using Docusaurus.
+- The documentation will be available at `http://localhost:8003`
