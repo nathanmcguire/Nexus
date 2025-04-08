@@ -21,7 +21,7 @@ git clone https://github.com/nathanmcguire/nexus.git
   - macOS: `brew install just`
   - Windows: `choco install just` or [Download from GitHub](https://github.com/casey/just/releases)
 
-## 🚀 justfile
+## 🚀 Automation with justfile
 
 ### Initialize the Project
 ```bash
