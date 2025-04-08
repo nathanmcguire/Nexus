@@ -7,6 +7,6 @@
   "private": true,
   "workspaces": [
     "nexus-react",
-    "docs"
+    "nexus-docs"
   ]
 }
