@@ -18,8 +18,8 @@ git clone https://github.com/nathanmcguire/nexus.git
   - Windows: [Download from nodejs.org](https://nodejs.org/)
 
 - `just`  
-  - macOS: `brew install just`
-  - Windows: `choco install just` or [Download from GitHub](https://github.com/casey/just/releases)
+  - macOS: `yarn add -D just-install`
+  - Windows: `yarn add -D just-install`
 
 ## 🚀 Automation with justfile
 
