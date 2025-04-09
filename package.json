@@ -1,6 +1,6 @@
 {
   "name": "nexus",
-  "version": "1.0.0",
+  "version": "0.0",
   "main": "index.js",
   "author": "Nathan C. McGuire <nathan@ncm.me>",
   "license": "MIT",
@@ -8,5 +8,12 @@
   "workspaces": [
     "nexus-react",
     "nexus-docs"
-  ]
+  ],
+  "dependencies": {
+    "just": "^0.1.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "just-install": "^2.0.2"
+  }
 }
