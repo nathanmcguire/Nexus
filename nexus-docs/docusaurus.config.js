@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nexus',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'IT Management Information System',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -46,7 +46,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +57,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -76,12 +76,36 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Nexus',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Nexus Logo',
           src: 'img/logo.svg',
         },
         items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'userSidebar',
+            position: 'left',
+            label: 'User Guide',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'developerSidebar',
+            position: 'left',
+            label: 'Developer Guide',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'deploymentSidebar',
+            position: 'left',
+            label: 'Deployment Guide',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'faqSidebar',
+            position: 'left',
+            label: 'FAQ',
+          },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -89,8 +113,12 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+{
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/nathanmcguire/nexus',
             label: 'GitHub',
             position: 'right',
           },
@@ -134,12 +162,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/nathanmcguire/nexus',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Nexus Project Contributors`,
       },
       prism: {
         theme: prismThemes.github,
