@@ -1,14 +1,34 @@
 set windows-shell := ["powershell.exe", "-c"]
 
+[windows]
 init:
     python3 -m venv .venv
-    if (Test-Path .venv\Scripts\pip.exe) { .venv\Scripts\python.exe -m pip install --upgrade pip; .venv\Scripts\pip.exe install -r requirements.txt } else { .venv/bin/pip install --upgrade pip; .venv/bin/pip install -r requirements.txt }
-    if (Get-Command brew -ErrorAction SilentlyContinue) { brew install yarn } else { npm install --global yarn }
+    .venv\Scripts\python.exe -m pip install --upgrade pip
+    .venv\Scripts\pip.exe install -r requirements.txt
+    brew install yarn
     yarn install
 
+<<<<<<< Updated upstream
     
 run fastapi:
     if (Test-Path .venv\Scripts\python.exe) { .venv\Scripts\python.exe -m uvicorn nexus-fastapi:app --reload --port 8002 } else { .venv/bin/python -m uvicorn nexus-fastapi:app --reload --port 8002 }
+=======
+[macos]
+init:
+    python3 -m venv .venv
+    .venv/bin/pip install --upgrade pip
+    .venv/bin/pip install -r requirements.txt
+    npm install --global yarn
+    yarn install
+
+[windows]
+run-fastapi:
+    .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
+
+[macos]
+run-fastapi:
+    .venv/bin/python -m uvicorn nexus-fastapi.main:app --reload --port 8002
+>>>>>>> Stashed changes
 
 run-react:
     yarn workspace nexus-react start
