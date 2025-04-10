@@ -1,6 +1,6 @@
 {
   "name": "nexus",
-  "version": "0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "author": "Nathan C. McGuire <nathan@ncm.me>",
   "license": "MIT",
