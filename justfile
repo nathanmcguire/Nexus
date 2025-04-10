@@ -8,11 +8,6 @@ init:
     brew install yarn
     yarn install
 
-<<<<<<< Updated upstream
-    
-run fastapi:
-    if (Test-Path .venv\Scripts\python.exe) { .venv\Scripts\python.exe -m uvicorn nexus-fastapi:app --reload --port 8002 } else { .venv/bin/python -m uvicorn nexus-fastapi:app --reload --port 8002 }
-=======
 [macos]
 init:
     python3 -m venv .venv
@@ -28,7 +23,6 @@ run-fastapi:
 [macos]
 run-fastapi:
     .venv/bin/python -m uvicorn nexus-fastapi.main:app --reload --port 8002
->>>>>>> Stashed changes
 
 run-react:
     yarn workspace nexus-react start
