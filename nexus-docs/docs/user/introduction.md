@@ -2,6 +2,8 @@
 sidebar_label: 'Introduction'
 sidebar_position: 3
 ---
-# Hello
+# User Guide Introduction
 
-This is my **first Docusaurus document**!
+Navigating the Interface: Include screenshots and walkthroughs.
+Key Features: Explain how to use core features like dashboards, reports, etc.
+Troubleshooting: Provide solutions to common user issues.

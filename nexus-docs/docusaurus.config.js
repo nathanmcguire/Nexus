@@ -4,9 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -17,20 +15,15 @@ const config = {
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nathanmcguire', // Usually your GitHub org/user name.
   projectName: 'nexus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -38,15 +31,12 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
+          editUrl: 'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
         },
         blog: {
           showReadingTime: true,
@@ -54,11 +44,7 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
-          // Useful options to enforce blogging best practices
+          editUrl: 'https://github.com/nathanmcguire/nexus/tree/main/nexus-docs',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -66,14 +52,35 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        googleAnalytics: {
+          trackingID: 'XXXXXX', // Replace with your Google Analytics tracking ID
+        },
       }),
+    ],
+    [
+      'redocusaurus',
+      /** @type {import('redocusaurus').PresetEntry} */
+      {
+        specs: [
+          {
+            spec: 'openapi/index.yaml', // Path to your local OpenAPI YAML file
+            route: '/api/',
+          },
+          {
+            spec: 'https://redocly.github.io/redoc/openapi.yaml', // Example OpenAPI spec URL
+            route: '/openapi/',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff', // Customize with your site's primary color
+        },
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Nexus',
@@ -84,36 +91,12 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'userSidebar',
+            sidebarId: 'docSidebar',
             position: 'left',
-            label: 'User Guide',
+            label: 'Docs',
           },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
-            type: 'docSidebar',
-            sidebarId: 'developerSidebar',
-            position: 'left',
-            label: 'Developer Guide',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'deploymentSidebar',
-            position: 'left',
-            label: 'Deployment Guide',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'faqSidebar',
-            position: 'left',
-            label: 'FAQ',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-{
             type: 'docsVersionDropdown',
             position: 'right',
           },
@@ -131,8 +114,20 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Introduction',
+                to: '/docs/introduction',
+              },
+              {
+                label: 'User Guide',
+                to: '/docs/user/introduction',
+              },
+              {
+                label: 'Developer Guide',
+                to: '/docs/developer/introduction',
+              },
+              {
+                label: 'Deployment Guide',
+                to: '/docs/deployment/introduction',
               },
             ],
           },
