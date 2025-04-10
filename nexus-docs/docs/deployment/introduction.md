@@ -1,7 +1,10 @@
 ---
 sidebar_label: 'Introduction'
-sidebar_position: 3
+sidebar_position: 1
 ---
-# Hello
+# Deployment Guide Introduction
 
-This is my **first Docusaurus document**!
+Installation: Step-by-step guide for installing the system.
+Configuration: Explain configuration options (e.g., .env files, database setup).
+Scaling and Performance: Tips for scaling the system in production.
+Backup and Recovery: Instructions for backing up and restoring data.
