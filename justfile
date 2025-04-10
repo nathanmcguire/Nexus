@@ -7,7 +7,7 @@ init:
     yarn install
 
     
-run-fastapi:
+run fastapi:
     if (Test-Path .venv\Scripts\python.exe) { .venv\Scripts\python.exe -m uvicorn nexus-fastapi:app --reload --port 8002 } else { .venv/bin/python -m uvicorn nexus-fastapi:app --reload --port 8002 }
 
 run-react:
@@ -24,3 +24,10 @@ build-docs:
 
 version-docs VERSION:
     yarn workspace nexus-docs run docusaurus docs:version {{VERSION}}
+
+freeze pip:
+    pip freeze > requirements.txt
+
+install pip PACKAGE:
+    pip install {{PACKAGE}}
+    pip freeze > requirements.txt
