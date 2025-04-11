@@ -1,7 +1,18 @@
+from sqlalchemy.ext.declarative import as_declarative, declared_attr
+
+@as_declarative()
+class Base:
+    __name__: str
+
+    # Automatically generate table names if not explicitly defined
+    @declared_attr
+    def __tablename__(cls) -> str:
+        return cls.__name__.lower()
+    
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from core.config import settings
+from config import settings
 
 # Synchronous database engine
 engine = create_engine(settings.DATABASE_URL, connect_args={"check_same_thread": False})

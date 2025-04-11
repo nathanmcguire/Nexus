@@ -1,4 +1,7 @@
-from pydantic import BaseModel, EmailStr
+""" from pydantic import BaseModel, EmailStr
+from typing import Optional
+
+
 
 class UserBase(BaseModel):
     username: str
@@ -13,10 +16,10 @@ class UserInDB(UserBase):
     hashed_password: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class UserResponse(UserBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True """

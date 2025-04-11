@@ -1,24 +1,35 @@
 # filepath: c:\Users\nmcguire\Documents\GitHub\nexus\nexus-fastapi\main.py
+import sys
+import os
+
+import assets.routes
+
+# Add the nexus-fastapi directory to the Python module search path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI
-from fastapi.openapi.utils import get_openapi
-import yaml
-from .routes import assets, users
+import assets
 
-app = FastAPI()
 
-# Include routers
-app.include_router(assets.router)
-app.include_router(users.router)
+app = FastAPI(
+    title="Nexus",
+    description="",
+    summary="",
+    #contact={
+        #"name": "",
+        #"url": "",
+        #"email": "",
+    #},
+    license_info={
+        "name": "",
+        "identifier": "MIT",
+    }
+)
 
-@app.get("/openapi.yaml", include_in_schema=False)
-def get_openapi_yaml():
-    """
-    Returns the OpenAPI schema in YAML format.
-    """
-    openapi_schema = get_openapi(
-        title="Nexus API",
-        version="1.0.0",
-        description="API documentation for Nexus",
-        routes=app.routes,
-    )
-    return yaml.dump(openapi_schema, allow_unicode=True)
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the FastAPI app!"}
+
+# Include routers for modular route handling
+app.include_router(assets.routes.router)
+#app.include_router(users.router)

@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from db.base import Base
+from database import Base
+from pydantic import BaseModel
+from typing import Optional
 
 class User(Base):
     __tablename__ = "users"
@@ -10,3 +12,12 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)
     is_superuser = Column(Boolean, default=False)
+
+class UserBase(BaseModel):
+    username: str
+    email: Optional[str] = None
+    full_name: Optional[str] = None
+    disabled: Optional[bool] = None
+
+class UserInDB(UserBase):
+    hashed_password: str
