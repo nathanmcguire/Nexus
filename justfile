@@ -17,27 +17,27 @@ init:
     yarn install
 
 [windows]
-run-fastapi:
-    $env:PYTHONPATH="${PWD}\nexus-fastapi"; .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
+run fastapi:
+    $env:PYTHONPATH="${PWD}\nexus_fastapi"; .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
 
 [macos]
-run-fastapi:
-    .venv/bin/python -m uvicorn nexus-fastapi.main:app --reload --port 8002
+run fastapi:
+    .venv/bin/python -m uvicorn nexus fastapi.main:app --reload --port 8002
 
-run-react:
-    yarn workspace nexus-react start
+run react:
+    yarn workspace nexus_react start
 
-build-react:
-    yarn workspace nexus-react build    
+build react:
+    yarn workspace nexus_react build    
 
-run-docs:
-    yarn workspace nexus-docs start
+run docs:
+    yarn workspace nexus_docs start
 
-build-docs:
-    yarn workspace nexus-docs build
+build docs:
+    yarn workspace nexus_docs build
 
-version-docs VERSION:
-    yarn workspace nexus-docs run docusaurus docs:version {{VERSION}}
+version docs VERSION:
+    yarn workspace nexus_docs run docusaurus docs:version {{VERSION}}
 
 freeze pip:
     pip freeze > requirements.txt

@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "nexus-react",
-    "nexus-docs"
+    "nexus_react",
+    "nexus_docs"
   ],
   "dependencies": {
     "just": "^0.1.8"
