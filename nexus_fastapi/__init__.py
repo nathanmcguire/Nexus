@@ -1,1 +1,1 @@
-from .main import app
+from nexus_fastapi.main import app

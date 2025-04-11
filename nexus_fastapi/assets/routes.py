@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import List
-from . import schemas as schemas
+from nexus_fastapi.assets import schemas as schemas
 from . import models as models
 
 

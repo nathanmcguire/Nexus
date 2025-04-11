@@ -17,31 +17,40 @@ init:
     yarn install
 
 [windows]
-run fastapi:
-    $env:PYTHONPATH="${PWD}\nexus_fastapi"; .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
+run-fastapi:
+    $env:PYTHONPATH="${PWD}\nexus_fastapi"; .venv\Scripts\python.exe -m uvicorn nexus_fastapi.main:app --reload --port 8002
 
 [macos]
-run fastapi:
+run-fastapi:
     .venv/bin/python -m uvicorn nexus fastapi.main:app --reload --port 8002
 
-run react:
+run-react:
     yarn workspace nexus_react start
 
-build react:
+build-react:
     yarn workspace nexus_react build    
 
-run docs:
+run-docs:
     yarn workspace nexus_docs start
 
-build docs:
+build-docs:
     yarn workspace nexus_docs build
 
-version docs VERSION:
+version-docs VERSION:
     yarn workspace nexus_docs run docusaurus docs:version {{VERSION}}
 
-freeze pip:
+freeze-pip:
     pip freeze > requirements.txt
 
-install pip PACKAGE:
+install-pip PACKAGE:
     pip install {{PACKAGE}}
     pip freeze > requirements.txt
+
+
+[windows]
+migrate-db MESSAGE:
+    .venv\Scripts\python.exe -m alembic revision --autogenerate -m "{{MESSAGE}}"
+
+[windows]
+upgrade-db:
+    .venv\Scripts\python.exe -m alembic upgrade head

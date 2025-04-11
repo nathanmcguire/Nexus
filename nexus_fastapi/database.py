@@ -1,4 +1,8 @@
 from sqlalchemy.ext.declarative import as_declarative, declared_attr
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from config import settings
+from typing import Any
 
 @as_declarative()
 class Base:
@@ -8,20 +12,14 @@ class Base:
     @declared_attr
     def __tablename__(cls) -> str:
         return cls.__name__.lower()
-    
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from config import settings
 
 # Synchronous database engine
 engine = create_engine(settings.DATABASE_URL, connect_args={"check_same_thread": False})
 
-# Asynchronous database engine (if needed)
-# async_engine = create_async_engine(settings.DATABASE_URL, future=True, echo=True)
-
 # Session maker for synchronous sessions
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Removed Base.metadata.create_all(bind=engine) to let Alembic handle migrations
 
 # Dependency to get the database session
 def get_db():
@@ -30,3 +28,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# Function to return Base and engine for Alembic
+def get_base_and_engine() -> Any:
+    return Base, engine

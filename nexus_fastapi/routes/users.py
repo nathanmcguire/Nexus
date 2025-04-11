@@ -1,7 +1,7 @@
-""" from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends
 from typing import Annotated
-from ..auth import get_current_active_user
-from ..models import User
+from nexus_fastapi.auth import get_current_active_user
+from nexus_fastapi.models import User
 
 # Initialize router for user-related endpoints
 router = APIRouter()
@@ -20,4 +20,4 @@ async def read_users_me(
 async def read_own_items(
     current_user: Annotated[User, Depends(get_current_active_user)],
 ):
-    return [{"item_id": "Foo", "owner": current_user.username}] """
+    return [{"item_id": "Foo", "owner": current_user.username}]

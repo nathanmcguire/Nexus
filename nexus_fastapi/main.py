@@ -1,11 +1,14 @@
 # filepath: c:\Users\nmcguire\Documents\GitHub\nexus\nexus-fastapi\main.py
-import sys
 import os
+import sys
+
+# Ensure the nexus_fastapi directory is in the Python module search path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Ensure the assets directory is in the Python module search path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'assets'))
 
 import assets.routes
-
-# Add the nexus-fastapi directory to the Python module search path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from fastapi import FastAPI
 import assets

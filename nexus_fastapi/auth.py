@@ -1,4 +1,3 @@
-"""
 from datetime import datetime, timedelta, timezone
 from typing import Annotated
 import jwt
@@ -8,7 +7,7 @@ from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
 from security import verify_password
 from models.user import  UserInDB
-from .models import TokenData
+from nexus_fastapi.models import TokenData
 
 SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
 ALGORITHM = "HS256"
@@ -74,7 +73,3 @@ async def get_current_active_user(current_user: Annotated[UserInDB, Depends(get_
     if current_user.disabled:
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
-
-
-
-"""

@@ -1,8 +1,8 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, ForeignKey
 from database import Base
 from datetime import datetime
 
-from ..assets.models import Asset
+from assets.models import Asset
 
 class Documentation(Asset):
     __tablename__ = "Documentation"

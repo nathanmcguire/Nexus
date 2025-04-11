@@ -131,6 +131,7 @@ profile_default/
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 sdist/
 share/python-wheels/
+sqlite.db
 target/
 var/
 venv.bak/

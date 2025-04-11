@@ -1,8 +1,8 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, ForeignKey
 from database import Base
 from datetime import datetime
 
-from ..assets.models import Asset
+from nexus_fastapi.assets.models import Asset
 
 class Network(Asset):
     __tablename__ = "Network"
