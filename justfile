@@ -18,7 +18,7 @@ init:
 
 [windows]
 run-fastapi:
-    .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
+    $env:PYTHONPATH="${PWD}\nexus-fastapi"; .venv\Scripts\python.exe -m uvicorn nexus-fastapi.main:app --reload --port 8002
 
 [macos]
 run-fastapi:
