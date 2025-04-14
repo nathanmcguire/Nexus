@@ -1,18 +1,11 @@
-# filepath: c:\Users\nmcguire\Documents\GitHub\nexus\nexus-fastapi\main.py
-import os
-import sys
-
-# Ensure the nexus_fastapi directory is in the Python module search path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-# Ensure the assets directory is in the Python module search path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'assets'))
-
-import assets.routes
-
 from fastapi import FastAPI
-import assets
+from .database import engine, Base
+from .domains.models import *
+from .domains.routes import register_routes
+from .exceptions import *
+from .logging import configure_logging, LogLevels
 
+configure_logging(LogLevels.info)
 
 app = FastAPI(
     title="Nexus",
@@ -29,10 +22,4 @@ app = FastAPI(
     }
 )
 
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to the FastAPI app!"}
-
-# Include routers for modular route handling
-app.include_router(assets.routes.router)
-#app.include_router(users.router)
+register_routes(app)
