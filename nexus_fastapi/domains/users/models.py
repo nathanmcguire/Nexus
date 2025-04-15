@@ -1,18 +1,16 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, ForeignKey, Enum
+from sqlalchemy import Integer, String, DateTime, Boolean
+from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
-from enum import Enum as PyEnum
 
-from ..assets.models import Asset
+Base = declarative_base()
 
-class UserRole(PyEnum):
-    WORKFORCE = "workforce"
-    SERVICE_PROVIDER = "service_provider"
-    USER_ACCOUNT = "user_account"
-    ADMINISTRATOR_ACCOUNT = "administrator_account"
-    SERVICE_PROVIDER_ACCOUNT = "service_provider_account"
-
-class User(Asset):
+class User(Base):
     __tablename__ = "Users"
 
-    id = Column(Integer, ForeignKey('Assets.id'), primary_key=True)
-    user_role = Column(Enum(UserRole), nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    username: Mapped[str] = mapped_column(String(32), unique=True, nullable=False)
+    password: Mapped[str] = mapped_column(String(128), nullable=False)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[DateTime] = mapped_column(DateTime, default=datetime.now, nullable=False)
+    updated_at: Mapped[DateTime] = mapped_column(DateTime, default=datetime.now, onupdate=datetime.utcnow)

@@ -3,7 +3,7 @@ from typing import Optional
 from datetime import datetime
 from enum import Enum
 
-from assets.schemas import Asset
+from ..assets.schemas import Asset
 
 class SoftwareType(str, Enum):
     APPLICATION = "Application"

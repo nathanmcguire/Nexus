@@ -46,11 +46,14 @@ install-pip PACKAGE:
     pip install {{PACKAGE}}
     pip freeze > requirements.txt
 
+[windows]
+init-alembic:
+    .venv\Scripts\python.exe -m alembic init alembic
 
 [windows]
-migrate-db MESSAGE:
+migrate-alembic MESSAGE:
     .venv\Scripts\python.exe -m alembic revision --autogenerate -m "{{MESSAGE}}"
 
 [windows]
-upgrade-db:
+upgrade-alembic:
     .venv\Scripts\python.exe -m alembic upgrade head

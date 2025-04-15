@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from .models import Data
 from .schemas import DataCreate, DataUpdate
 
+# Service functions
 def get_data(db: Session, data_id: int):
     return db.query(Data).filter(Data.id == data_id).first()
 
