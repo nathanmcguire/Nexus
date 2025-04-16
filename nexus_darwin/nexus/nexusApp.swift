@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct nexusApp: App {
+struct NexusApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
