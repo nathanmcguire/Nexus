@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from security import verify_password, create_access_token
 from domains.users import User
 from database import get_db
-from schemas.users import UserResponse
+from nexus_fastapi.users.schemas import UserResponse
 from fastapi.security import OAuth2PasswordRequestForm
 
 router = APIRouter()

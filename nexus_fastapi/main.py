@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .database import engine, Base
-from .domains.models import *
-from .domains.routes import register_routes
+from .models import *
+from .controllers import register_routes
 from .exceptions import *
 from .logging import configure_logging, LogLevels
 
