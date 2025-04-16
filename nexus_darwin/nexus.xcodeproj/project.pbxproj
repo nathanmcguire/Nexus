@@ -6,76 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		D80A59662DAF44E900489DFA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80A59492DAF44E800489DFA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D80A59502DAF44E800489DFA;
-			remoteInfo = nexus;
-		};
-		D80A59702DAF44E900489DFA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80A59492DAF44E800489DFA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D80A59502DAF44E800489DFA;
-			remoteInfo = nexus;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		D80A59512DAF44E800489DFA /* nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D80A59652DAF44E900489DFA /* nexusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nexusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D80A596F2DAF44E900489DFA /* nexusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nexusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80A59A02DAF52DE00489DFA /* nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D80A59772DAF44E900489DFA /* Exceptions for "nexus" folder in "nexus" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = D80A59502DAF44E800489DFA /* nexus */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D80A59532DAF44E800489DFA /* nexus */ = {
+		D80A59A22DAF52DE00489DFA /* nexus */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D80A59772DAF44E900489DFA /* Exceptions for "nexus" folder in "nexus" target */,
-			);
 			path = nexus;
-			sourceTree = "<group>";
-		};
-		D80A59682DAF44E900489DFA /* nexusTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nexusTests;
-			sourceTree = "<group>";
-		};
-		D80A59722DAF44E900489DFA /* nexusUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nexusUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D80A594E2DAF44E800489DFA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A59622DAF44E900489DFA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A596C2DAF44E900489DFA /* Frameworks */ = {
+		D80A599D2DAF52DE00489DFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,22 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D80A59482DAF44E800489DFA = {
+		D80A59972DAF52DE00489DFA = {
 			isa = PBXGroup;
 			children = (
-				D80A59532DAF44E800489DFA /* nexus */,
-				D80A59682DAF44E900489DFA /* nexusTests */,
-				D80A59722DAF44E900489DFA /* nexusUITests */,
-				D80A59522DAF44E800489DFA /* Products */,
+				D80A59A22DAF52DE00489DFA /* nexus */,
+				D80A59A12DAF52DE00489DFA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D80A59522DAF44E800489DFA /* Products */ = {
+		D80A59A12DAF52DE00489DFA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D80A59512DAF44E800489DFA /* nexus.app */,
-				D80A59652DAF44E900489DFA /* nexusTests.xctest */,
-				D80A596F2DAF44E900489DFA /* nexusUITests.xctest */,
+				D80A59A02DAF52DE00489DFA /* nexus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,134 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D80A59502DAF44E800489DFA /* nexus */ = {
+		D80A599F2DAF52DE00489DFA /* nexus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D80A59782DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexus" */;
+			buildConfigurationList = D80A59B12DAF52E000489DFA /* Build configuration list for PBXNativeTarget "nexus" */;
 			buildPhases = (
-				D80A594D2DAF44E800489DFA /* Sources */,
-				D80A594E2DAF44E800489DFA /* Frameworks */,
-				D80A594F2DAF44E800489DFA /* Resources */,
+				D80A599C2DAF52DE00489DFA /* Sources */,
+				D80A599D2DAF52DE00489DFA /* Frameworks */,
+				D80A599E2DAF52DE00489DFA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D80A59532DAF44E800489DFA /* nexus */,
+				D80A59A22DAF52DE00489DFA /* nexus */,
 			);
 			name = nexus;
 			packageProductDependencies = (
 			);
 			productName = nexus;
-			productReference = D80A59512DAF44E800489DFA /* nexus.app */;
+			productReference = D80A59A02DAF52DE00489DFA /* nexus.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D80A59642DAF44E900489DFA /* nexusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80A597D2DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexusTests" */;
-			buildPhases = (
-				D80A59612DAF44E900489DFA /* Sources */,
-				D80A59622DAF44E900489DFA /* Frameworks */,
-				D80A59632DAF44E900489DFA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D80A59672DAF44E900489DFA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				D80A59682DAF44E900489DFA /* nexusTests */,
-			);
-			name = nexusTests;
-			packageProductDependencies = (
-			);
-			productName = nexusTests;
-			productReference = D80A59652DAF44E900489DFA /* nexusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D80A596E2DAF44E900489DFA /* nexusUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80A59802DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexusUITests" */;
-			buildPhases = (
-				D80A596B2DAF44E900489DFA /* Sources */,
-				D80A596C2DAF44E900489DFA /* Frameworks */,
-				D80A596D2DAF44E900489DFA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D80A59712DAF44E900489DFA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				D80A59722DAF44E900489DFA /* nexusUITests */,
-			);
-			name = nexusUITests;
-			packageProductDependencies = (
-			);
-			productName = nexusUITests;
-			productReference = D80A596F2DAF44E900489DFA /* nexusUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D80A59492DAF44E800489DFA /* Project object */ = {
+		D80A59982DAF52DE00489DFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					D80A59502DAF44E800489DFA = {
+					D80A599F2DAF52DE00489DFA = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					D80A59642DAF44E900489DFA = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = D80A59502DAF44E800489DFA;
-					};
-					D80A596E2DAF44E900489DFA = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = D80A59502DAF44E800489DFA;
 					};
 				};
 			};
-			buildConfigurationList = D80A594C2DAF44E800489DFA /* Build configuration list for PBXProject "nexus" */;
+			buildConfigurationList = D80A599B2DAF52DE00489DFA /* Build configuration list for PBXProject "nexus" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D80A59482DAF44E800489DFA;
+			mainGroup = D80A59972DAF52DE00489DFA;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D80A59522DAF44E800489DFA /* Products */;
+			productRefGroup = D80A59A12DAF52DE00489DFA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D80A59502DAF44E800489DFA /* nexus */,
-				D80A59642DAF44E900489DFA /* nexusTests */,
-				D80A596E2DAF44E900489DFA /* nexusUITests */,
+				D80A599F2DAF52DE00489DFA /* nexus */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D80A594F2DAF44E800489DFA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A59632DAF44E900489DFA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A596D2DAF44E900489DFA /* Resources */ = {
+		D80A599E2DAF52DE00489DFA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,21 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D80A594D2DAF44E800489DFA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A59612DAF44E900489DFA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80A596B2DAF44E900489DFA /* Sources */ = {
+		D80A599C2DAF52DE00489DFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,101 +124,8 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		D80A59672DAF44E900489DFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D80A59502DAF44E800489DFA /* nexus */;
-			targetProxy = D80A59662DAF44E900489DFA /* PBXContainerItemProxy */;
-		};
-		D80A59712DAF44E900489DFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D80A59502DAF44E800489DFA /* nexus */;
-			targetProxy = D80A59702DAF44E900489DFA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		D80A59792DAF44E900489DFA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = nexus/nexus.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"nexus/Preview Content\"";
-				DEVELOPMENT_TEAM = 899KC88L84;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nexus/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		D80A597A2DAF44E900489DFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = nexus/nexus.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"nexus/Preview Content\"";
-				DEVELOPMENT_TEAM = 899KC88L84;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nexus/Info.plist;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		D80A597B2DAF44E900489DFA /* Debug */ = {
+		D80A59AF2DAF52E000489DFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -423,7 +186,7 @@
 			};
 			name = Debug;
 		};
-		D80A597C2DAF44E900489DFA /* Release */ = {
+		D80A59B02DAF52E000489DFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -476,92 +239,80 @@
 			};
 			name = Release;
 		};
-		D80A597E2DAF44E900489DFA /* Debug */ = {
+		D80A59B22DAF52E000489DFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nexus/nexus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nexus/Preview Content\"";
 				DEVELOPMENT_TEAM = 899KC88L84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexusTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nexus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nexus";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		D80A597F2DAF44E900489DFA /* Release */ = {
+		D80A59B32DAF52E000489DFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nexus/nexus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nexus/Preview Content\"";
 				DEVELOPMENT_TEAM = 899KC88L84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexusTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nexus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nexus";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		D80A59812DAF44E900489DFA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 899KC88L84;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexusUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = nexus;
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		D80A59822DAF44E900489DFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 899KC88L84;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.nexusUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = nexus;
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
@@ -569,43 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D80A594C2DAF44E800489DFA /* Build configuration list for PBXProject "nexus" */ = {
+		D80A599B2DAF52DE00489DFA /* Build configuration list for PBXProject "nexus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D80A597B2DAF44E900489DFA /* Debug */,
-				D80A597C2DAF44E900489DFA /* Release */,
+				D80A59AF2DAF52E000489DFA /* Debug */,
+				D80A59B02DAF52E000489DFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D80A59782DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexus" */ = {
+		D80A59B12DAF52E000489DFA /* Build configuration list for PBXNativeTarget "nexus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D80A59792DAF44E900489DFA /* Debug */,
-				D80A597A2DAF44E900489DFA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80A597D2DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80A597E2DAF44E900489DFA /* Debug */,
-				D80A597F2DAF44E900489DFA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80A59802DAF44E900489DFA /* Build configuration list for PBXNativeTarget "nexusUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80A59812DAF44E900489DFA /* Debug */,
-				D80A59822DAF44E900489DFA /* Release */,
+				D80A59B22DAF52E000489DFA /* Debug */,
+				D80A59B32DAF52E000489DFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D80A59492DAF44E800489DFA /* Project object */;
+	rootObject = D80A59982DAF52DE00489DFA /* Project object */;
 }
