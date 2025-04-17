@@ -3,9 +3,9 @@ from sqlalchemy.orm import Mapped, mapped_column
 import uuid
 from datetime import datetime
 from nexus_fastapi.database import Base
-from nexus_fastapi.common.models import TimestampMixin
+from nexus_fastapi.common.models import Audit
 
-class User(Base, TimestampMixin):
+class User(Base, Audit):
     __tablename__ = "Users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)

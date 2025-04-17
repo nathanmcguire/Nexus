@@ -1,5 +1,48 @@
+/* General layout styling */
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.menu {
+  width: 20%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-list {
+  width: 40%;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.user-details {
+  width: 40%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.user-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.user-details p {
+  margin: 10px 0;
 }
 
 .App-logo {

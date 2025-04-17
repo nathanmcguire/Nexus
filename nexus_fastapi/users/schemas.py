@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from datetime import datetime
+from ..common.schemas import Audit
 
 class UserCreate(BaseModel):
     username: str
@@ -10,20 +10,29 @@ class UserCreate(BaseModel):
     class Config:
         from_attributes = True
 
-class UserRead(BaseModel):
+class User(BaseModel):
     id: int
     guid: str
     username: str
     is_active: bool
-    created_at: datetime
-    created_by: int
-    updated_at: datetime
-    updated_by: int
-    deleted_at: Optional[datetime] = Field(default=None, nullable=True)
-    deleted_by: Optional[int] = Field(default=None, nullable=True)
-    is_deleted: bool
-    recovered_at: Optional[datetime] = Field(default=None, nullable=True)
-    recovered_by: Optional[int] = Field(default=None, nullable=True)
+    audit: Audit
+
+    class Config:
+        from_attributes = True
+        arbitrary_types_allowed = True
+
+
+class UserUpdate(BaseModel):
+    username: Optional[str] = None
+    password: Optional[str] = None
+    is_active: Optional[bool] = None
+
+    class Config:
+        from_attributes = True
+
+class UserDelete(BaseModel):
+    is_deleted: Optional[bool] = None
+    is_archived: Optional[bool] = None
 
     class Config:
         from_attributes = True
