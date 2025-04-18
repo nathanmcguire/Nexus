@@ -56,26 +56,7 @@ const config = {
           trackingID: 'XXXXXX', // Replace with your Google Analytics tracking ID
         },
       }),
-    ],
-    [
-      'redocusaurus',
-      /** @type {import('redocusaurus').PresetEntry} */
-      {
-        specs: [
-          {
-            spec: 'openapi/index.yaml', // Path to your local OpenAPI YAML file
-            route: '/api/',
-          },
-          {
-            spec: 'https://redocly.github.io/redoc/openapi.yaml', // Example OpenAPI spec URL
-            route: '/openapi/',
-          },
-        ],
-        theme: {
-          primaryColor: '#1890ff', // Customize with your site's primary color
-        },
-      },
-    ],
+    ]
   ],
 
   themeConfig:

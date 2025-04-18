@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from .models import *
 from .controllers import register_routes
@@ -32,6 +33,14 @@ app = FastAPI(
             {"operationId": "deleteUserById", "summary": "Delete User By Id"},
         ]}
     ]
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8001", "http://localhost:3000"],  # Added React app origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 register_routes(app)

@@ -1,0 +1,392 @@
+openapi: 3.1.0
+info:
+  title: Nexus
+  license:
+    name: ""
+    identifier: MIT
+  version: 0.1.0
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Get Users
+      operationId: getUsers
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+                title: Response Getusers
+        "418":
+          description: Error fetching user by ID
+    post:
+      tags:
+        - Users
+      summary: Create User
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserCreate"
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "409":
+          description: Conflict: Username already exists.
+        "418":
+          description: Error creating user
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Get User By Id
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Id
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "418":
+          description: Error fetching user by ID
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+    patch:
+      tags:
+        - Users
+      summary: Update User By Id
+      operationId: updateUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserUpdate"
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "418":
+          description: Error patching user
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+    put:
+      tags:
+        - Users
+      summary: Replace User By Id
+      operationId: replaceUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserCreate"
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "418":
+          description: Error updating user
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+    delete:
+      tags:
+        - Users
+      summary: Delete User By Id
+      operationId: deleteUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            title: Id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserDelete"
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "418":
+          description: Error deleting user
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+components:
+  schemas:
+    Audit:
+      type: object
+      title: Audit
+      required:
+        - created_at
+        - created_by
+        - is_archived
+        - is_deleted
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        created_by:
+          type: integer
+          title: Created By
+        updated_at:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: null
+          title: Updated At
+          nullable: true
+        updated_by:
+          anyOf:
+            - type: integer
+            - type: null
+          title: Updated By
+          nullable: true
+        archived_at:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: null
+          title: Archived At
+          nullable: true
+        archived_by:
+          anyOf:
+            - type: integer
+            - type: null
+          title: Archived By
+          nullable: true
+        unarchived_at:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: null
+          title: Unarchived At
+          nullable: true
+        unarchived_by:
+          anyOf:
+            - type: integer
+            - type: null
+          title: Unarchived By
+          nullable: true
+        is_archived:
+          type: boolean
+          title: Is Archived
+        deleted_at:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: null
+          title: Deleted At
+          nullable: true
+        deleted_by:
+          anyOf:
+            - type: integer
+            - type: null
+          title: Deleted By
+          nullable: true
+        undeleted_at:
+          anyOf:
+            - type: string
+              format: date-time
+            - type: null
+          title: Undeleted At
+          nullable: true
+        undeleted_by:
+          anyOf:
+            - type: integer
+            - type: null
+          title: Undeleted By
+          nullable: true
+        is_deleted:
+          type: boolean
+          title: Is Deleted
+    HTTPValidationError:
+      type: object
+      title: HTTPValidationError
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationError"
+          title: Detail
+    User:
+      type: object
+      title: User
+      required:
+        - id
+        - guid
+        - username
+        - is_active
+        - audit
+      properties:
+        id:
+          type: integer
+          title: Id
+        guid:
+          type: string
+          title: Guid
+        username:
+          type: string
+          title: Username
+        is_active:
+          type: boolean
+          title: Is Active
+        audit:
+          $ref: "#/components/schemas/Audit"
+    UserCreate:
+      type: object
+      title: UserCreate
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          title: Username
+        password:
+          type: string
+          title: Password
+        is_active:
+          anyOf:
+            - type: boolean
+            - type: null
+          title: Is Active
+          default: true
+    UserDelete:
+      type: object
+      title: UserDelete
+      properties:
+        is_deleted:
+          anyOf:
+            - type: boolean
+            - type: null
+          title: Is Deleted
+        is_archived:
+          anyOf:
+            - type: boolean
+            - type: null
+          title: Is Archived
+    UserUpdate:
+      type: object
+      title: UserUpdate
+      properties:
+        username:
+          anyOf:
+            - type: string
+            - type: null
+          title: Username
+        password:
+          anyOf:
+            - type: string
+            - type: null
+          title: Password
+        is_active:
+          anyOf:
+            - type: boolean
+            - type: null
+          title: Is Active
+    ValidationError:
+      type: object
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+tags:
+  - name: Users
+    description: User Management
+    endpoints:
+      - operationId: getUsers
+        summary: Get Users
+      - operationId: createUser
+        summary: Create User
+      - operationId: getUserById
+        summary: Get User By Id
+      - operationId: replaceUserById
+        summary: Replace User By Id
+      - operationId: updateUserById
+        summary: Update User By Id
+      - operationId: deleteUserById
+        summary: Delete User By Id

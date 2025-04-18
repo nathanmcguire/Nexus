@@ -10,9 +10,9 @@ from nexus_fastapi.database import get_db
 router = APIRouter(prefix="/users", tags=["Users"])
 
 @router.get("", response_model=List[schemas.User], operation_id="getUsers", responses={
-    418: {"description": "Error fetching user by ID"}
+    418: {"description": "Error fetching users"}
 })
-def get_users(db: Session = Depends(get_db)):
+async def get_users(db: Session = Depends(get_db)):
     try:
         users = db.query(models.User).all()
         return [schemas.User.from_orm(user) for user in users]
@@ -53,7 +53,7 @@ def get_user_by_id(id: int, db: Session = Depends(get_db)):
     try:
         user = db.query(models.User).filter(models.User.id == id).first()
         if user:
-            return schemas.User.from_orm(user)
+            return schemas.User.from_orm(user).dict()
         raise HTTPException(status_code=404, detail="User not found")
     except SQLAlchemyError as e:
         print(f"Error fetching user by ID: {e}")
@@ -112,21 +112,9 @@ def delete_user_by_id(id: int, user: schemas.UserDelete, db: Session = Depends(g
         if existing_user:
             if user.is_deleted is not None:
                 existing_user.is_deleted = user.is_deleted
-                if user.is_deleted:
-                    existing_user.deleted_at = datetime.utcnow()
-                    existing_user.deleted_by = -1
-                else:
-                    existing_user.undeleted_at = datetime.utcnow()
-                    existing_user.undeleted_by = -1
 
             if user.is_archived is not None:
                 existing_user.is_archived = user.is_archived
-                if user.is_archived:
-                    existing_user.archived_at = datetime.utcnow()
-                    existing_user.archived_by = -1
-                else:
-                    existing_user.unarchived_at = datetime.utcnow()
-                    existing_user.unarchived_by = -1
 
             db.commit()
             db.refresh(existing_user)
