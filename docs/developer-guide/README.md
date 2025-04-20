@@ -13,3 +13,6 @@ Setting Up the Development Environment: Instructions for cloning the repo, insta
 Codebase Overview: Explain the structure of the codebase (e.g., nexus-react, nexus-fastapi, nexus-docs).
 API Documentation: Include details about REST/GraphQL APIs.
 Contributing Guidelines: Explain how to contribute to the project.
+
+## Models Documentation
+For detailed information about the models used in the project, refer to the [Models Documentation](models/README.md).
