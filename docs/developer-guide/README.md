@@ -1,8 +1,13 @@
----
-sidebar_label: 'Introduction'
-sidebar_position: 1
----
-# Developer Guide Introduction
+# 🧑‍💻 Developer Guide
+
+Folder structure and conventions
+How to run locally (e.g., Docker, npm install, uvicorn main:app)
+How React talks to FastAPI (e.g., API base URLs, auth)
+Testing setup (React Testing Library, pytest, etc.)
+Code style, linting, and pre-commit hooks
+Useful scripts/aliases
+
+
 
 Setting Up the Development Environment: Instructions for cloning the repo, installing dependencies, and running the project locally.
 Codebase Overview: Explain the structure of the codebase (e.g., nexus-react, nexus-fastapi, nexus-docs).
