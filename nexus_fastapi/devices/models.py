@@ -1,4 +1,4 @@
-from nexus_fastapi.domains.assets.models import Asset
+from fastapi.domains.assets.models import Asset
 
 class Device(Asset):
     """Base class for all devices."""

@@ -1,8 +1,8 @@
 from sqlalchemy import Integer, String, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 import uuid
-from database import Base
-from common.models import AuditMixIn
+from ..database import Base
+from ..common.models import AuditMixIn
 
 
 class User(Base, AuditMixIn):

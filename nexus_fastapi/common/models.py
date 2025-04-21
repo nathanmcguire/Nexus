@@ -1,12 +1,9 @@
-from sqlalchemy.ext.declarative import declarative_base
+
 from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 
 
-Base = declarative_base()
-
-
-class AuditMixIn(Base):
+class AuditMixIn():
     created_at: Mapped[datetime] = mapped_column(nullable=True)
     created_by: Mapped[int] = mapped_column(nullable=True)
     updated_at: Mapped[datetime] = mapped_column(nullable=True)
@@ -19,6 +16,8 @@ class AuditMixIn(Base):
     deleted_by: Mapped[int] = mapped_column(nullable=True)
     undeleted_at: Mapped[datetime] = mapped_column(nullable=True)
     undeleted_by: Mapped[int] = mapped_column(nullable=True)
+    imported_at: Mapped[datetime] = mapped_column(nullable=True)
+    imported_by: Mapped[int] = mapped_column(nullable=True)
 
     @property
     def is_archived(self) -> bool:
@@ -45,3 +44,8 @@ class AuditMixIn(Base):
         else:
             self.undeleted_at = datetime.utcnow()
             self.undeleted_by = -1
+
+    @property
+    def is_imported(self) -> bool:
+        return self.imported_at is not None
+    

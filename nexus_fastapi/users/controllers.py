@@ -4,10 +4,11 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from datetime import datetime
 from . import schemas, models
-from nexus_fastapi.database import get_db
+from ..database import get_db
 
 # Initialize router for user-related endpoints
 router = APIRouter(prefix="/users", tags=["Users"])
+
 
 @router.get("", response_model=List[schemas.User], operation_id="getUsers", responses={
     418: {"description": "Error fetching users"}
@@ -19,6 +20,7 @@ async def get_users(db: Session = Depends(get_db)):
     except SQLAlchemyError as e:
         print(f"Error fetching users: {e}")
         raise HTTPException(status_code=418, detail="Error fetching users")
+
 
 @router.post("", response_model=schemas.User, operation_id="createUser", responses={
     409: {"description": "Conflict: Username already exists."},
@@ -45,6 +47,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         db.rollback()
         print(f"Error creating user: {e}")
         raise HTTPException(status_code=418, detail="Error creating user")
+
 
 @router.get("/{id}", response_model=schemas.User, operation_id="getUserById", responses={
     418: {"description": "Error fetching user by ID"}
@@ -83,6 +86,7 @@ def update_user_by_id(id: int, user: schemas.UserUpdate, db: Session = Depends(g
         print(f"Error updating user: {e}")
         raise HTTPException(status_code=418, detail="Error updating user")
 
+
 @router.put("/{id}", response_model=schemas.User, operation_id="replaceUserById", responses={
     418: {"description": "Error updating user"}
 })
@@ -102,6 +106,7 @@ def replace_user_by_id(id: int, user: schemas.UserCreate, db: Session = Depends(
         db.rollback()
         print(f"Error updating user: {e}")
         raise HTTPException(status_code=418, detail="Error updating user")
+
 
 @router.delete("/{id}", response_model=schemas.User, operation_id="deleteUserById", responses={
     418: {"description": "Error deleting user"}

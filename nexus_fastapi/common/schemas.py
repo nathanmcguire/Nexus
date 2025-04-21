@@ -1,8 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import Field
 from datetime import datetime
 from typing import Optional
 
-class Audit(BaseModel):
+
+class AuditMixIn():
     created_at: datetime
     created_by: int
     updated_at: Optional[datetime] = Field(default=None, nullable=True)
@@ -17,3 +18,6 @@ class Audit(BaseModel):
     undeleted_at: Optional[datetime] = Field(default=None, nullable=True)
     undeleted_by: Optional[int] = Field(default=None, nullable=True)
     is_deleted: bool
+    imported_at: Optional[datetime] = Field(default=None, nullable=True)
+    imported_by: Optional[int] = Field(default=None, nullable=True)
+    is_imported: bool

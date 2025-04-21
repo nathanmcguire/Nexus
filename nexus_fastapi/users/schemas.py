@@ -1,7 +1,10 @@
-from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, create_model
 from typing import Optional
-from ..common.schemas import Audit
+from ..common.schemas import AuditMixIn
+
+
+class Config:
+    from_attributes = True
 
 
 class UserCreate(BaseModel):
@@ -9,18 +12,15 @@ class UserCreate(BaseModel):
     password: str
     is_active: Optional[bool] = Field(default=True)
 
-    class Config:
-        from_attributes = True
 
-
-class User(BaseModel):
-    id: int
-    guid: str
-    username: str
-    is_active: bool
-
-    class Config:
-        from_attributes = True
+User = create_model(
+    'User',
+    id=(int, ...),
+    guid=(str, ...),
+    username=(str, ...),
+    is_active=(bool, ...),
+    **AuditMixIn.__annotations__
+)
 
 
 class UserUpdate(BaseModel):
@@ -28,13 +28,13 @@ class UserUpdate(BaseModel):
     password: Optional[str] = None
     is_active: Optional[bool] = None
 
-    class Config:
-        from_attributes = True
-
 
 class UserDelete(BaseModel):
     is_deleted: Optional[bool] = None
     is_archived: Optional[bool] = None
 
-    class Config:
-        from_attributes = True
+
+User.__config__ = Config
+UserCreate.__config__ = Config
+UserUpdate.__config__ = Config
+UserDelete.__config__ = Config
