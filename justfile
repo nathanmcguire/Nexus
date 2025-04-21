@@ -22,7 +22,7 @@ run-fastapi:
 
 [macos]
 run-fastapi:
-    .venv/bin/python -m uvicorn nexus fastapi.main:app --reload --port 8002
+    uvicorn nexus_fastapi.main:app --reload --port 8002
 
 run-react:
     yarn workspace nexus_react start
@@ -30,14 +30,6 @@ run-react:
 build-react:
     yarn workspace nexus_react build    
 
-run-docs:
-    yarn workspace nexus_docs start
-
-build-docs:
-    yarn workspace nexus_docs build
-
-version-docs VERSION:
-    yarn workspace nexus_docs run docusaurus docs:version {{VERSION}}
 
 freeze-pip:
     pip freeze > requirements.txt
