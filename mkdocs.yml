@@ -53,6 +53,8 @@ extra:
       link: https://youtube.com/@james-willett
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/willettjames
+extra_css:
+  - assets/custom.css
 copyright: Copyright &copy; 2025 Nathan McGuire
 plugins:
   - search

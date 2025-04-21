@@ -1,0 +1,9 @@
+/* Remove the max-width restriction on .md-grid */
+.md-grid {
+  max-width: none;
+}
+
+/* Restore the copyright footer */
+.md-footer-copyright {
+  display: block;
+}

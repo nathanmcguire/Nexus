@@ -80,7 +80,9 @@ Contributing Guidelines: Explain how to contribute to the project.
 ## Models Documentation
 For detailed information about the models used in the project, refer to the [Models Documentation](models/README.md).
 
+## Sample Data
 
+Sample data is stored in the `data` folder. If you need to store sample data that should not be tracked by Git, use the `data.local` folder, which is included in `.gitignore`.
 
 ## Contributing
 - Follow the project's coding standards and guidelines.
