@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
-from .models import *
 from .controllers import register_routes
-from .exceptions import *
 from .logging import configure_logging, LogLevels
 
 
