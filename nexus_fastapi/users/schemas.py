@@ -6,6 +6,13 @@ from ..common.schemas import AuditMixIn
 class Config:
     from_attributes = True
 
+class Username(BaseModel):
+    username: str
+
+class UserRegister(BaseModel):
+    username: str
+    password: str
+
 
 class UserCreate(BaseModel):
     username: str
@@ -35,6 +42,7 @@ class UserDelete(BaseModel):
 
 
 User.__config__ = Config
+UserRegister.__config__ = Config
 UserCreate.__config__ = Config
 UserUpdate.__config__ = Config
 UserDelete.__config__ = Config

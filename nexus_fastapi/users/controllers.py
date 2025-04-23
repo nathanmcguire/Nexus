@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestFor
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from typing import List, Optional
-from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from datetime import datetime
@@ -11,6 +10,43 @@ from ..database import get_db
 # Initialize router for user-related endpoints
 router = APIRouter(prefix="/users", tags=["Users"])
 
+@router.post(
+    "/username",
+    response_model=List[schemas.Username],
+    operation_id="checkUsernameAvailability",
+    responses={418: {"description": "Error checking username availability"}}
+)
+def username(username: schemas.Username, db: Session = Depends(get_db)) -> List[schemas.Username]:
+    """
+    This endpoint checks if a desired username is available.
+
+    If the username is available, the returned list contains one object with the requested username.
+    
+    If the username is unavailable, thereturned  list contains 5 suggested usernames that are available.
+    """
+    try:
+        user_exists = db.query(models.User).filter(models.User.username == username.username).first()
+        if user_exists is None:
+            return [schemas.Username(username=username.username)]
+
+        # Suggest 5 similar usernames
+        suggestions = []
+        base_username = username.username.rstrip("1234567890")
+        counter = 1
+        while len(suggestions) < 5:
+            suggested_username = f"{base_username}{counter}"
+            if not db.query(models.User).filter(models.User.username == suggested_username).first():
+                suggestions.append(schemas.Username(username=suggested_username))
+            counter += 1
+
+        return suggestions
+    except SQLAlchemyError as e:
+        print(f"Error checking username availability: {e}")
+        raise HTTPException(status_code=418, detail="Error checking username availability")
+
+@router.post("/register", response_model=dict)
+def register(user: schemas.UserRegister, db: Session = Depends(get_db)):
+    return {"message": f"User {user.get('username', 'unknown')} registered successfully"}
 
 @router.get("", response_model=List[schemas.User], operation_id="getUsers", responses={
     418: {"description": "Error fetching users"}
@@ -131,3 +167,5 @@ def delete_user_by_id(id: int, user: schemas.UserDelete, db: Session = Depends(g
         db.rollback()
         print(f"Error deleting user: {e}")
         raise HTTPException(status_code=418, detail="Error deleting user")
+
+

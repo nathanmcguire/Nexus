@@ -9,3 +9,4 @@ python-multipart
 slowapi
 sqlalchemy
 uvicorn
+pytest==7.4.4

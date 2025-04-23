@@ -29,6 +29,12 @@ app = FastAPI(
             {"operationId": "replaceUserById", "summary": "Replace User By Id"},
             {"operationId": "updateUserById", "summary": "Update User By Id"},
             {"operationId": "deleteUserById", "summary": "Delete User By Id"},
+        ]},
+        {"name": "Authentication", "description": "Authentication", "endpoints": [
+            {"operationId": "register", "summary": "Register"},
+            {"operationId": "login", "summary": "Login"},
+            {"operationId": "logout", "summary": "Logout"},
+            {"operationId": "token", "summary": "Token"},
         ]}
     ]
 )
