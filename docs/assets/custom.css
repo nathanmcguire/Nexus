@@ -1,9 +1,4 @@
-/* Remove the max-width restriction on .md-grid */
-.md-grid {
-  max-width: none;
-}
-
-/* Restore the copyright footer */
-.md-footer-copyright {
-  display: block;
+/* Force the content area to take the entire width */
+.wy-nav-content {
+    max-width: None;
 }

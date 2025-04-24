@@ -1,0 +1,18 @@
+{% block footer %}
+<!-- Custom footer content or leave empty to hide -->
+ <footer>
+    <div class="footer-navigation">
+        {% if previous_page %}
+        <a href="{{ previous_page.url }}" class="btn btn-primary">Previous</a>
+        {% endif %}
+        {% if next_page %}
+        <a href="{{ next_page.url }}" class="btn btn-primary">Next</a>
+        {% endif %}
+    </div>
+    <hr>
+    <div role="contentinfo">
+        <!-- Copyright etc -->
+        <p>Copyright © 2025 Nathan McGuire</p>
+    </div>
+</footer>
+{% endblock %}

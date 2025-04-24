@@ -2,6 +2,8 @@ site_name: Nexus
 site_url: https://docs.nexus.ncm.me
 theme:
   name: material
+  #name: readthedocs
+  #custom_dir: docs/assets/custom_theme
   font:
     text: Ubuntu
     code: Ubuntu Mono
@@ -53,8 +55,10 @@ extra:
       link: https://youtube.com/@james-willett
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/willettjames
+  hide: ["powered_by"]
 extra_css:
   - assets/custom.css
 copyright: Copyright &copy; 2025 Nathan McGuire
 plugins:
   - search
+  - swagger-ui-tag
