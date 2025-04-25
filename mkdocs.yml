@@ -62,3 +62,29 @@ copyright: Copyright &copy; 2025 Nathan McGuire
 plugins:
   - search
   - swagger-ui-tag
+nav:
+  - Introduction: introduction.md
+  - Quickstart: quickstart.md
+  - Installation:
+      - Architecture: installation/architecture.md
+      - Installation Methods: installation/installation_methods.md
+      - Kubernetes: installation/kubernetes.md
+      - PyPI: installation/pypi.md
+      - Docker Compose: installation/docker_compose.md
+      - Upgrading: installation/upgrading.md
+      - Docker Builds: installation/docker_builds.md
+  - Using Nexus:
+      - README: using_nexus/README.md
+  - Configuration:
+      - Configuring: configuration/configuring.md
+  - Contributing:
+      - Darwin: contributing/darwin.md
+      - FastAPI: contributing/fastapi.md
+      - React: contributing/react.md
+      - README: contributing/README.md
+      - Models: contributing/models/
+  - Security:
+      - Security Configurations: security/security_configurations.md
+      - CVEs Fixed by Release: security/cves_fixed_by_release.md
+  - FAQ: faq.md
+  - API: api.md

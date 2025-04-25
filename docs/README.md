@@ -1,23 +1,41 @@
-# Welcome to Nexus
+# Website
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Commands
+### Installation
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+```
+$ yarn
+```
 
-## Project layout
+### Local Development
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```
+$ yarn start
+```
 
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-<li>Overview</li>
-            <li>Features</li>
-            <li>Getting Started</li>
-            <li>System Requirements</li>
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

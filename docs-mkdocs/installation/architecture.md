@@ -1,4 +1,6 @@
-# 🚀 Deployment Guide
+# Architecture
+
+# Installation
 
 Environment variables (clearly documented and what they do)
 Docker setup / CI/CD notes

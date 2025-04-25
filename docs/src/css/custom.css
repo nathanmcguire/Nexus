@@ -1,0 +1,3 @@
+html.fullWidthContent main > .container {
+  max-width: initial !important;
+}
