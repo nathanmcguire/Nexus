@@ -10,7 +10,8 @@
     "nexus_docs"
   ],
   "dependencies": {
-    "just": "^0.1.8"
+    "just": "^0.1.8",
+    "remarkable-plantuml": "^1.1.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
