@@ -1,4 +1,5 @@
 site_name: Nexus
+tagline: "Management Information System"
 site_url: https://docs.nexus.ncm.me
 theme:
   name: material
@@ -56,6 +57,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/willettjames
   hide: ["powered_by"]
+  tagline: "Management Information System"
 extra_css:
   - assets/custom.css
 copyright: Copyright &copy; 2025 Nathan McGuire
@@ -76,7 +78,7 @@ nav:
   - Using Nexus:
       - README: using_nexus/README.md
   - Configuration:
-      - Configuring: configuration/configuring.md
+      - Configuring: configuration/configuring_nexus.md
   - Contributing:
       - Darwin: contributing/darwin.md
       - FastAPI: contributing/fastapi.md
