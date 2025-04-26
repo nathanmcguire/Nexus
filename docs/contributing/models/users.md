@@ -1,5 +1,7 @@
 # Users
 
+![Users](users.puml)
+
 ## Overview
 The User model is a fundamental part of the application, representing the core attributes and relationships of a user in the system. It is used across various domains and services to manage user-related data and operations.
 
@@ -26,14 +28,14 @@ The User model includes the following fields:
 | **disabled_at**| DateTime  | The timestamp when the user was disabled.                               |
 | **disabled_by**| String    | The identifier of the user or system that disabled this user.           |
 
-For auditing-related fields (event_at, event_by), refer to the [AuditMixIn model](../common/#auditmixin).
+For auditing-related fields (event_at, event_by), refer to the AuditMixIn model.
 
 ## Properties
 
 | Property      | Type      | Description                                                                 |
 |---------------|-----------|-----------------------------------------------------------------------------|
 | **is_enabled** | `bool`   | **Getter**: Returns `True` if the user is enabled (i.e., `enabled_at` is not `None` and either `disabled_at` is `None` or `disabled_at` is earlier than `enabled_at`). |
-| **password**   | `str`    | **Getter**: Returns the hashed password.<br><br>**Setter**: Hashes the raw password using Argon2 and stores it securely.|
+| **password**   | `str`    | **Getter**: Returns the hashed password.<br /><br />**Setter**: Hashes the raw password using Argon2 and stores it securely.|
 
 ## Methods
 
