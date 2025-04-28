@@ -43,30 +43,43 @@ upgrade-alembic:
     .venv\Scripts\python.exe -m alembic upgrade head
 
 [windows]
-serve-docs:
+run-docs:
     .venv\Scripts\mkdocs.exe serve
 
 [macos]
-serve-docs:
+run-docs:
     .venv/bin/mkdocs serve
+
+[windows]
+run-docs-no-cache:
+    .venv\Scripts\python.exe scripts\set_mkdocs_puml_cache_backend.py disable
+    .venv\Scripts\mkdocs.exe serve
+    .venv\Scripts\python.exe scripts\set_mkdocs_puml_cache_backend.py enable
+
+[macos]
+run-docs-no-cache:
+    .venv/bin/python3 scripts/set_mkdocs_puml_cache_backend.py disable
+    .venv/bin/mkdocs serve
+    .venv/bin/python3 scripts/set_mkdocs_puml_cache_backend.py enable
 
 [windows]
 clean-docs:
     if (Test-Path "docs/site/") { Remove-Item -Recurse -Force "docs/site/" }
-    if (Test-Path "$env:USERPROFILE/.cache/mkdocs_puml/nexus") { Remove-Item -Recurse -Force "$env:USERPROFILE/.cache/mkdocs_puml/nexus" }
     .venv\Scripts\mkdocs.exe build --clean
+    .venv\Scripts\python.exe scripts\set_mkdocs_puml_cache_backend.py enable
+
 
 [macos]
 clean-docs:
     rm -rf docs/site/
-    rm -rf ~/.cache/mkdocs_puml/nexus
     .venv/bin/mkdocs build --clean
+    .venv/bin/python3 scripts/set_mkdocs_puml_cache_backend.py enable
 
 [windows]
-serve-api:
+run-api:
     $env:PYTHONPATH="${PWD}\nexus_fastapi"; .venv\Scripts\python.exe -m uvicorn nexus_fastapi.main:app --reload --port 8002
 
 [macos]
-serve-api:
+run-api:
     PYTHONPATH="${PWD}/nexus_fastapi" .venv/bin/python -m uvicorn nexus_fastapi.main:app --reload --port 8002
 
