@@ -1,7 +1,1 @@
 -r requirements.txt
-mkdocs
-mkdocs_material
-mkdocs_puml
-mkdocs-swagger-ui-tag
-pytest
-pytest-asyncio
