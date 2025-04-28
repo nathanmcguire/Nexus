@@ -1,7 +1,7 @@
 -r requirements.txt
+mkdocs
+mkdocs-material
+mkdocs_puml
+mkdocs-swagger-ui-tag
 pytest
 pytest-asyncio
-httpx
-black
-ruff
-httpx

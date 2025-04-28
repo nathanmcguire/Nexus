@@ -1,12 +1,4 @@
-alembic
-email-validator
-fastapi
-passlib
-psycopg2
-pyjwt
-python-dotenv
-python-multipart
-slowapi
 sqlalchemy
+alembic
+fastapi
 uvicorn
-pytest==7.4.4
