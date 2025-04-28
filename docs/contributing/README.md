@@ -7,26 +7,44 @@ Nexus includes a core set of projects:
  - React for frontend web
  - Swift for Apple platforms.
 
-```mermaid
-graph TD
-    subgraph Web
-        React[React Application]
-    end
 
-    subgraph Backend
-        FastAPI[FastAPI Application]
-        Database[(Database)]
-    end
+## Setting up the development environment
 
-    subgraph "iOS, iPadOS, macOS"
-        Swift[Swift Application]
-    end
+### Creating and Activating a Python Virtual Environment
 
-    React <-->|REST API Calls| FastAPI
-    Swift <-->|REST API Calls| FastAPI
-    FastAPI <-->|SQLAlchemy ORM| Database
-```
- 
+To set up a Python virtual environment for the project, follow these steps:
+
+1. **Create the virtual environment**:
+    ```bash
+    python3 -m venv .venv
+    ```
+
+2. **Activate the virtual environment**:
+    - On **macOS/Linux**:
+      ```bash
+      source .venv/bin/activate
+      ```
+    - On **Windows**:
+      ```cmd
+      .venv\Scripts\activate
+      ```
+
+3. Once activated, your terminal prompt should change to indicate that the virtual environment is active. You can now install the required dependencies using:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Install development requirements**:
+    ```bash
+    pip install -r requirements-dev.txt
+    ```
+
+## Setup PlantUML Server
+brew install openjdk
+sudo ln -sfn $(brew --prefix openjdk)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+curl -L -o plantuml-server.jar https://github.com/plantuml/plantuml-server/releases/latest/download/plantuml-server.jar
+java -jar plantuml-server.jar
+
 
 ## Root Folders
 

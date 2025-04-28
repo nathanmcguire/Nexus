@@ -1,6 +1,8 @@
 # Users
 
-![Users](users.puml)
+```puml
+!include users.puml
+```
 
 ## Overview
 The User model is a fundamental part of the application, representing the core attributes and relationships of a user in the system. It is used across various domains and services to manage user-related data and operations.

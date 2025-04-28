@@ -1,0 +1,16 @@
+@startuml
+class User {
+    +id: int
+    +guid: uuid
+    +[[http://google.com username]]: str
+    +password: str
+    +enabled_at: str
+    +enabled_by: str
+    +disabled_at: str
+    +disabled_by: str
+
+    +password: str {property}
+    +is_enabled: bool {property}
+    +verify_password(raw_password: str): bool
+}
+@enduml
