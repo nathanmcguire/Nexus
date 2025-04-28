@@ -8,7 +8,7 @@ from . import schemas
 from ..database import get_db
 from ..users.models import User
 
-router = APIRouter(prefix="/auth", tags=["Authentication"])
+router = APIRouter(prefix="/authorizations", tags=["Authorizations"])
 
 
 
