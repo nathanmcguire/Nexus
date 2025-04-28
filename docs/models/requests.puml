@@ -1,20 +1,24 @@
 @startuml requests
 !include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/users.puml
 
-class Audit {
-    + audit_id: int
-    + action: str
-    + entity_id: int
-    + entity_type: str
+class Request {
+    + id: int
     + timestamp: datetime
-    + requested_by: int
-    + request_ip: str
-    + request_method: str
-    + request_url: str
-    + request_payload: str
+    + requested_by_id: int
+    + requested_by_ip: str
+    + endpoint: str
+    + entity_id: int
+    + entity_type: EntityType
+    + method: HttpMethod
+    + headers: JSON
+    + payload: JSON
     + response_status: int
+    + response_headers: JSON
+    + response_payload: JSON
+    + log_level: LogLevel
+    + metadata: JSON
 }
 
-User::id ||--o{ Audit::requested_by
+User::id ||--o{ Audit::requested_by_id
 
 @enduml
