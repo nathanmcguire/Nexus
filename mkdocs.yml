@@ -63,6 +63,8 @@ extra_css:
 copyright: Copyright &copy; 2025 Nathan McGuire
 plugins:
   - search
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
   - swagger-ui-tag
 nav:
   - Introduction: introduction.md
@@ -89,4 +91,7 @@ nav:
       - Security Configurations: security/security_configurations.md
       - CVEs Fixed by Release: security/cves_fixed_by_release.md
   - FAQ: faq.md
+  - Models:
+      - Users: models/users.md
+      - Audits: models/audits.md
   - API: api.md
