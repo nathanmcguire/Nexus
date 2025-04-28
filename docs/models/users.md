@@ -1,7 +1,7 @@
 # Users
 
 ```puml
-!include users.puml
+!include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/users.puml
 ```
 
 ## Overview

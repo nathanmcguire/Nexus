@@ -1,4 +1,4 @@
-@startuml
+@startuml users
 class User {
     +id: int
     +guid: uuid
@@ -13,4 +13,4 @@ class User {
     +is_enabled: bool {property}
     +verify_password(raw_password: str): bool
 }
-@enduml
+@enduml 

@@ -65,6 +65,9 @@ plugins:
   - search
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
+      theme:
+        light: material/red-light
+        dark: material/red-dark
   - swagger-ui-tag
 nav:
   - Introduction: introduction.md
@@ -95,3 +98,4 @@ nav:
       - Users: models/users.md
       - Audits: models/audits.md
   - API: api.md
+

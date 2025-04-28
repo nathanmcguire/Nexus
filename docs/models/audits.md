@@ -2,7 +2,9 @@
 
 ## UML Diagram
 ```puml
-!include audits.puml
+@startuml
+!include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/audits.puml
+@enduml
 ```
 
 ## Field Descriptions

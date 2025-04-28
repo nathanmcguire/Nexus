@@ -1,4 +1,6 @@
-@startuml
+@startuml audits
+!include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/users.puml
+
 class Audit {
     + audit_id: int
     + action: str
@@ -12,3 +14,7 @@ class Audit {
     + request_payload: str
     + response_status: int
 }
+
+User::id ||--o{ Audit::requested_by
+
+@enduml
