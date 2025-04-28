@@ -56,20 +56,24 @@ migrate-alembic MESSAGE:
 upgrade-alembic:
     .venv\Scripts\python.exe -m alembic upgrade head
 
-[windows]
-clean:
-    if (Test-Path "docs/site/") { Remove-Item -Recurse -Force "docs/site/" }
-    .venv\Scripts\mkdocs.exe build --clean
 
-[macos]
-clean:
-    rm -rf docs/site/
-    .venv/bin/mkdocs build --clean
 
 [windows]
-serve-mkdocs:
+serve-docs:
     .venv\Scripts\mkdocs.exe serve
 
 [macos]
-serve-mkdocs:
-    .venv/bin/mkdocs serve --clean
+serve-docs:
+    .venv/bin/mkdocs serve
+
+[windows]
+clean-docs:
+    if (Test-Path "site/") { Remove-Item -Recurse -Force "site/" }
+    if (Test-Path "$env:USERPROFILE/.cache/mkdocs_puml/nexus") { Remove-Item -Recurse -Force "$env:USERPROFILE/.cache/mkdocs_puml/nexus" }
+    .venv\Scripts\mkdocs.exe build --clean
+
+[macos]
+clean-docs:
+    rm -rf site/
+    rm -rf ~/.cache/mkdocs_puml/nexus
+    .venv/bin/mkdocs build --clean
