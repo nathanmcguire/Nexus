@@ -19,6 +19,6 @@ class Request {
     + metadata: JSON
 }
 
-User::id ||--o{ Audit::requested_by_id
+User::id ||--o{ Request::requested_by_id
 
 @enduml
