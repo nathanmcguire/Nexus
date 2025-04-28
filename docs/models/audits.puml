@@ -3,6 +3,7 @@
 
 class Audit {
     + audit_id: int
+     --
     + action: str
     + entity_id: int
     + entity_type: str
