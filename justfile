@@ -3,18 +3,25 @@ set windows-shell := ["powershell.exe", "-c"]
 [windows]
 init:
     python3 -m venv .venv
-    .venv\Scripts\python.exe -m pip install --upgrade pip
-    .venv\Scripts\pip.exe install -r requirements.txt
-    brew install yarn
-    yarn install
+    .venv\Scripts\pip.exe install -r requirements-dev.txt
+    #brew install yarn
+    #yarn install
 
 [macos]
 init:
     python3 -m venv .venv
     .venv/bin/pip install --upgrade pip
-    .venv/bin/pip install -r requirements.txt
-    npm install --global yarn
-    yarn install
+    .venv/bin/pip install -r requirements-dev.txt
+    #npm install --global yarn
+    #yarn install
+
+[windows]
+activate:
+    echo ".venv\Scripts\activate.ps1"
+
+[macos]
+activate:
+    echo "source .venv/bin/activate"
 
 [windows]
 run-fastapi:
