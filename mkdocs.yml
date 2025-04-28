@@ -89,13 +89,12 @@ nav:
       - FastAPI: contributing/fastapi.md
       - React: contributing/react.md
       - README: contributing/README.md
-      - Models: contributing/models/
   - Security:
       - Security Configurations: security/security_configurations.md
       - CVEs Fixed by Release: security/cves_fixed_by_release.md
   - FAQ: faq.md
   - Models:
       - Users: models/users.md
-      - Audits: models/audits.md
+      - Requests: models/requests.md
   - API: api.md
 
