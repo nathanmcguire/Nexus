@@ -10,3 +10,5 @@ mkdocs-swagger-ui-tag
 pytest
 pytest-asyncio
 dotenv
+passlib
+jwt
