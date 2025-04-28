@@ -68,6 +68,10 @@ plugins:
       theme:
         light: material/red-light
         dark: material/red-dark
+      interaction:
+        enabled: true
+      cache:
+        backend: disabled
   - swagger-ui-tag
 nav:
   - Introduction: introduction.md
