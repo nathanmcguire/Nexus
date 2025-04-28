@@ -1,6 +1,6 @@
 -r requirements.txt
 mkdocs
-mkdocs-material
+mkdocs_material
 mkdocs_puml
 mkdocs-swagger-ui-tag
 pytest
