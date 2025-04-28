@@ -1,104 +1,96 @@
-site_name: Nexus
-tagline: "Management Information System"
-site_url: https://docs.nexus.ncm.me
-theme:
-  name: material
-  #name: readthedocs
-  #custom_dir: docs/assets/custom_theme
-  font:
-    text: Ubuntu
-    code: Ubuntu Mono
-  icon:
-    logo: material/hub
-  #logo: assets/logo.png
-  favicon: assets/favicon.ico
-  palette:
-    # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: green
-      accent: deep purple
-
-    # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
-  features:
-    - navigation.footer
-markdown_extensions:
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-  - admonition
-  - pymdownx.details
-extra:
-  social:
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/@james-willett
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/willettjames
-  hide: ["powered_by"]
-  tagline: "Management Information System"
-extra_css:
-  - assets/custom.css
 copyright: Copyright &copy; 2025 Nathan McGuire
-plugins:
-  - search
-  - plantuml:
-      puml_url: https://www.plantuml.com/plantuml/
-      theme:
-        light: material/red-light
-        dark: material/red-dark
-      interaction:
-        enabled: true
-      cache:
-        backend: disabled
-  - swagger-ui-tag
+extra:
+  hide:
+  - powered_by
+  social:
+  - icon: fontawesome/brands/youtube
+    link: https://youtube.com/@james-willett
+  - icon: fontawesome/brands/linkedin
+    link: https://linkedin.com/in/willettjames
+  tagline: Management Information System
+extra_css:
+- assets/custom.css
+markdown_extensions:
+- attr_list
+# Removed pymdownx.emoji extension due to configuration error
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.superfences:
+    custom_fences:
+    - class: mermaid
+      format: null
+      name: mermaid
+- pymdownx.tabbed:
+    alternate_style: true
+- admonition
+- pymdownx.details
 nav:
-  - Introduction: introduction.md
-  - Quickstart: quickstart.md
-  - Installation:
-      - Architecture: installation/architecture.md
-      - Installation Methods: installation/installation_methods.md
-      - Kubernetes: installation/kubernetes.md
-      - PyPI: installation/pypi.md
-      - Docker Compose: installation/docker_compose.md
-      - Upgrading: installation/upgrading.md
-      - Docker Builds: installation/docker_builds.md
-  - Using Nexus:
-      - README: using_nexus/README.md
-  - Configuration:
-      - Configuring: configuration/configuring_nexus.md
-  - Contributing:
-      - Darwin: contributing/darwin.md
-      - FastAPI: contributing/fastapi.md
-      - React: contributing/react.md
-      - README: contributing/README.md
-  - Security:
-      - Security Configurations: security/security_configurations.md
-      - CVEs Fixed by Release: security/cves_fixed_by_release.md
-  - FAQ: faq.md
-  - Models:
-      - Users: models/users.md
-      - Requests: models/requests.md
-  - API: api.md
-
+- Introduction: introduction.md
+- Quickstart: quickstart.md
+- Installation:
+  - Architecture: installation/architecture.md
+  - Installation Methods: installation/installation_methods.md
+  - Kubernetes: installation/kubernetes.md
+  - PyPI: installation/pypi.md
+  - Docker Compose: installation/docker_compose.md
+  - Upgrading: installation/upgrading.md
+  - Docker Builds: installation/docker_builds.md
+- Using Nexus:
+  - README: using_nexus/README.md
+- Configuration:
+  - Configuring: configuration/configuring_nexus.md
+- Contributing:
+  - Darwin: contributing/darwin.md
+  - FastAPI: contributing/fastapi.md
+  - React: contributing/react.md
+  - README: contributing/README.md
+- Security:
+  - Security Configurations: security/security_configurations.md
+  - CVEs Fixed by Release: security/cves_fixed_by_release.md
+- FAQ: faq.md
+- Models:
+  - Users: models/users.md
+  - Requests: models/requests.md
+- API: api.md
+plugins:
+- search
+- plantuml:
+    cache:
+      backend: disabled
+    interaction:
+      enabled: true
+    puml_url: https://www.plantuml.com/plantuml/
+    theme:
+      dark: material/red-dark
+      light: material/red-light
+- swagger-ui-tag
+site_name: Don't Touch
+site_url: https://docs.nexus.ncm.me
+tagline: Management Information System
+theme:
+  favicon: assets/favicon.ico
+  features:
+  - navigation.footer
+  font:
+    code: Ubuntu Mono
+    text: Ubuntu
+  icon:
+    logo: octicons/circle-slash-16
+  name: material
+  palette:
+  - accent: deep purple
+    primary: green
+    scheme: slate
+    toggle:
+      icon: material/weather-sunny
+      name: Dark mode
+  - accent: deep orange
+    primary: blue
+    scheme: default
+    toggle:
+      icon: material/weather-night
+      name: Light mode
