@@ -1,0 +1,121 @@
+# Activity Model
+
+## UML Diagram
+```puml
+@startuml activity
+
+class User {
+    +id: int
+    +uuid: uuid
+    +username: str
+    -password: str
+    +enabled: bool
+    +archived: bool
+    +deleted: bool
+    +set_password(raw_password: str): void
+    +verify_password(raw_password: str): bool
+}
+' Represents a user in the system with attributes like username, password, and status flags.
+
+class Activity {
+    +id: int
+    +uuid: uuid
+    +user_id: int
+    +user_ip: str
+    +timestamp: datetime
+    +endpoint: str
+    +entity_id: int
+    +entity_type: EntityType
+    +method: HttpMethod
+    +headers: JSON
+    +payload: JSON
+    +response_status: int
+    +response_headers: JSON
+    +response_payload: JSON
+    +log_level: LogLevel
+    +metadata: JSON
+}
+' Logs user activities, including details about the request and response.
+
+enum EntityType {
+    User
+    Audit
+    Activity
+    // Add as needed
+}
+' Defines the types of entities that can be associated with activities.
+
+enum HttpMethod {
+    Get
+    Head
+    Post
+    Patch
+    Put
+    Trace
+    Options
+    Delete
+}
+' Represents HTTP methods used in activities.
+
+enum LogLevel {
+    Debug
+    Info
+    Warning
+    Error
+    Critical
+}
+' Specifies the severity level of logs.
+
+enum AuditAction {
+    Create
+    Read
+    Update
+    Delete
+    Restore
+    Archive
+    Retrieve
+    Enabled
+    Disabled
+}
+' Enumerates possible actions that can be audited.
+
+class Audit {
+    +id: int
+    +uuid: uuid
+    +user_id: int
+    +timestamp : datetime
+    +entity_type : string
+    +entity_id : string
+    +action : AuditAction
+    +old_data : JSONB
+    +new_data : JSONB
+}
+' Tracks changes to entities, including the old and new data states.
+
+User::id ||--o{ Activity::user_id : actor
+' Links a user to their activities.
+
+User::id ||--o{ Audit::user_id : actor
+' Links a user to their audit records.
+
+Activity::method ..> HttpMethod : uses
+' Indicates that activities use HTTP methods.
+
+Activity::entity_type ..> EntityType : uses
+' Indicates that activities are associated with specific entity types.
+
+Activity::log_level ..> LogLevel : uses
+' Indicates the log level for activities.
+
+Audit::entity_type ..> EntityType : uses
+' Suggests that audits are associated with specific actions.
+
+Audit::action ..> AuditAction : uses
+' Indicates the action being audited.
+
+@enduml
+```
+
+## Classes and Members
+
+## Enumerations

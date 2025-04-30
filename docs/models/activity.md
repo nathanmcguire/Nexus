@@ -2,7 +2,7 @@
 
 ## UML Diagram
 ```puml
-@startuml
+@startuml 
 !include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/activity.puml
 @enduml
 ```
