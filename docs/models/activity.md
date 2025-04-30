@@ -1,14 +1,15 @@
-# Requests Model
+# Activity Model
 
 ## UML Diagram
 ```puml
 @startuml
-!include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/requests.puml
+!include https://raw.githubusercontent.com/nathanmcguire/nexus/main/docs/models/activity.puml
 @enduml
 ```
 
 ## Field Descriptions
 - **id**: A unique identifier for the audit record.
+
 - **timestamp**: The exact time the action occurred.
 - **requestor_id**: A foreign key linking to the User who performed the action.
 - **requestor_ip**: The IP address of the client making the request.

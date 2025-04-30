@@ -43,6 +43,18 @@ upgrade-alembic:
     .venv\Scripts\python.exe -m alembic upgrade head
 
 [windows]
+migrate-db MESSAGE:
+    .venv\Scripts\python.exe -m alembic revision --autogenerate -m "{{MESSAGE}}"
+
+[windows]
+upgrade-db:
+    .venv\Scripts\python.exe -m alembic upgrade head
+
+[windows]
+downgrade-db REVISION:
+    .venv\Scripts\python.exe -m alembic downgrade {{REVISION}}
+
+[windows]
 run-docs:
     .venv\Scripts\mkdocs.exe serve
 
@@ -67,7 +79,6 @@ clean-docs:
     if (Test-Path "docs/site/") { Remove-Item -Recurse -Force "docs/site/" }
     .venv\Scripts\mkdocs.exe build --clean
     .venv\Scripts\python.exe scripts\set_mkdocs_puml_cache_backend.py enable
-
 
 [macos]
 clean-docs:
