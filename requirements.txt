@@ -4,7 +4,9 @@ fastapi
 uvicorn
 pydantic_settings
 mkdocs
-mkdocs_material
+mkdocs-get-deps
+mkdocs-material
+mkdocs-material-extensions
 mkdocs_puml
 mkdocs-swagger-ui-tag
 pytest
