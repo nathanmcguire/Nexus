@@ -1,0 +1,25 @@
+@startuml activity
+
+
+User::id ||--o{ Activity::user_id : actor
+
+
+User::id ||--o{ Audit::user_id : actor
+
+
+Activity::method ..> HttpMethod : uses
+
+
+Activity::entity_type ..> EntityType : uses
+
+
+Activity::log_level ..> LogLevel : uses
+
+
+Audit::entity_type ..> EntityType : uses
+
+
+Audit::action ..> AuditAction : uses
+
+
+@enduml

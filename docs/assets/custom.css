@@ -2,3 +2,7 @@
 .wy-nav-content {
     max-width: None;
 }
+
+.md-grid {
+    max-width: none !important;
+}

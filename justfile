@@ -4,7 +4,7 @@ set windows-shell := ["powershell.exe", "-c"]
 init:
     if (-Not (Test-Path ".venv")) { python -m venv .venv }
     .venv\Scripts\python.exe -m pip install --upgrade pip
-    .venv\Scripts\pip.exe install -r requirements-dev.txt
+    .venv\Scripts\pip.exe install -r requirements.txt
     #brew install yarn
     #yarn install
 
@@ -12,7 +12,7 @@ init:
 init:
     if [ ! -d ".venv" ]; then python3 -m venv .venv; fi
     .venv/bin/pip install --upgrade pip
-    .venv/bin/pip install -r requirements-dev.txt
+    .venv/bin/pip install -r requirements.txt
     #npm install --global yarn
     #yarn install
 

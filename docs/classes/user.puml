@@ -1,0 +1,14 @@
+@startuml user
+class User {
+    """Hello"""
+    +id: int
+    +uuid: uuid
+    +username: str
+    -password: str
+    +enabled: bool
+    +archived: bool
+    +deleted: bool
+    +set_password(raw_password: str): void
+    +verify_password(raw_password: str): bool
+}
+@enduml

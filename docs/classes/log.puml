@@ -1,0 +1,20 @@
+@startuml activity
+class Activity {
+    +id: int
+    +uuid: uuid
+    +user_id: int
+    +user_ip: str
+    +timestamp: datetime
+    +endpoint: str
+    +entity_id: int
+    +entity_type: EntityType
+    +method: HttpMethod
+    +headers: JSON
+    +payload: JSON
+    +response_status: int
+    +response_headers: JSON
+    +response_payload: JSON
+    +log_level: LogLevel
+    +metadata: JSON
+}
+@enduml

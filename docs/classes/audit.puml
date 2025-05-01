@@ -1,0 +1,27 @@
+@startuml audit
+class Audit {
+    +id: int
+    +uuid: uuid
+    +user_id: int
+    +timestamp : datetime
+    +entity_type : string
+    +entity_id : string
+    +action : AuditAction
+    +old_data : JSONB
+    +new_data : JSONB
+}
+@enduml
+
+@startuml audit_action
+enum AuditAction {
+    Create
+    Read
+    Update
+    Delete
+    Restore
+    Archive
+    Retrieve
+    Enabled
+    Disabled
+}
+@enduml

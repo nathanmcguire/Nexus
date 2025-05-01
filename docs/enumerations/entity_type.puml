@@ -1,0 +1,8 @@
+@startuml entity_type
+enum EntityType {
+    User
+    Audit
+    Activity
+    // Add as needed
+}
+@enduml
