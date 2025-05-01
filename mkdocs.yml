@@ -2,12 +2,6 @@ copyright: Copyright &copy; 2025 Nathan McGuire
 extra:
   hide:
   - powered_by
-  social:
-  - icon: fontawesome/brands/youtube
-    link: https://youtube.com/@james-willett
-  - icon: fontawesome/brands/linkedin
-    link: https://linkedin.com/in/willettjames
-  tagline: Management Information System
 extra_css:
 - assets/custom.css
 markdown_extensions:
@@ -70,7 +64,6 @@ plugins:
 - swagger-ui-tag
 site_name: Don't Touch
 site_url: https://docs.nexus.ncm.me
-tagline: Management Information System
 theme:
   favicon: assets/favicon.ico
   features:
