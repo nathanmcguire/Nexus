@@ -63,7 +63,7 @@ plugins:
       light: material/red-light
 - swagger-ui-tag
 site_name: Don't Touch
-site_url: https://docs.nexus.ncm.me
+site_url: https://nathanmcguire.github.io/nexus
 theme:
   favicon: assets/favicon.ico
   features:
