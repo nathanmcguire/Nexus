@@ -2,6 +2,8 @@ copyright: Copyright &copy; 2025 Nathan McGuire
 extra:
   hide:
   - powered_by
+  version:
+    provider: mike
 extra_css:
 - assets/custom.css
 markdown_extensions:
