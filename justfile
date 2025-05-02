@@ -30,29 +30,28 @@ run-react:
 build-react:
     yarn workspace nexus_react build
 
-[windows]
-init-alembic:
-    .venv\Scripts\python.exe -m alembic init alembic
-
-[windows]
-migrate-alembic MESSAGE:
-    .venv\Scripts\python.exe -m alembic revision --autogenerate -m "{{MESSAGE}}"
-
-[windows]
-upgrade-alembic:
-    .venv\Scripts\python.exe -m alembic upgrade head
 
 [windows]
 migrate-db MESSAGE:
     .venv\Scripts\python.exe -m alembic revision --autogenerate -m "{{MESSAGE}}"
+[macos]
+migrate-db MESSAGE:
+    .venv/bin/python -m alembic revision --autogenerate -m "{{MESSAGE}}"
 
 [windows]
 upgrade-db:
     .venv\Scripts\python.exe -m alembic upgrade head
+[macos]
+upgrade-db:
+    .venv/bin/python -m alembic upgrade head
 
 [windows]
 downgrade-db REVISION:
     .venv\Scripts\python.exe -m alembic downgrade {{REVISION}}
+[macos]
+downgrade-db REVISION:
+    .venv/bin/python -m alembic downgrade {{REVISION}}
+
 
 [windows]
 run-docs:

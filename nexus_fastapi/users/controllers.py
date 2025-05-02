@@ -1,34 +1,34 @@
 from fastapi import APIRouter, HTTPException, Depends, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from typing import List, Optional
 from sqlalchemy.orm import Session
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from datetime import datetime
-from . import schemas, models
+from . import schemas
 from ..database import get_db
+from .services import create_user_service, get_users_service, get_user_service
 
-# Initialize router for user-related endpoints
+
 router = APIRouter(prefix="/users", tags=["Users"])
 
 
 @router.post("/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     try:
-        # Check if the username is already taken
-        existing_user = db.query(models.User).filter(models.User.username == user.username).first()
-        if existing_user:
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Username already exists")
-
-        # Filter out invalid fields before creating the User instance
-        new_user = models.User(
-            username=user.username,
-            password=user.password,
-            enabled=user.enabled,
-        )
-        db.add(new_user)
-        db.commit()
-        db.refresh(new_user)
-        return {"message": f"User {new_user.username} created successfully"}
+        return create_user_service(user, db)
     except Exception as e:
-        db.rollback()
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Error creating user: {str(e)}")
+
+
+@router.get("/", response_model=list[schemas.User], status_code=status.HTTP_200_OK)
+def get_users(db: Session = Depends(get_db)):
+    try:
+        return get_users_service(db)
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Error fetching users: {str(e)}")
+
+
+@router.get("/{id}", response_model=schemas.User, status_code=status.HTTP_200_OK)
+def get_user(id: int, db: Session = Depends(get_db)):
+    try:
+        return get_user_service(id, db)
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Error fetching user: {str(e)}")
