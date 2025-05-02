@@ -1,0 +1,12 @@
+@startuml http_method
+enum HttpMethod {
+    Get
+    Head
+    Post
+    Patch
+    Put
+    Trace
+    Options
+    Delete
+}
+@enduml

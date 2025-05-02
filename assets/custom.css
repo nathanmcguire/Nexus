@@ -1,0 +1,8 @@
+/* Force the content area to take the entire width */
+.wy-nav-content {
+    max-width: None;
+}
+
+.md-grid {
+    max-width: none !important;
+}
